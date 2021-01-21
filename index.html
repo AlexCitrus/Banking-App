@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script src="./assets/main.js" defer></script>
+    <title>Main Application</title>
+  </head>
+  <body>
+    <div class="hero">
+      <section id="Forms" class="formsPage">
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="loginSwitch()">
+              Log-in
+            </button>
+            <button type="button" class="toggle-btn" onclick="registerSwitch()">
+              Register
+            </button>
+          </div>
+
+          <img id="logo" src="./assets/images/logo.jpg" alt="" />
+
+          <form id="loginForm" class="input-group">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="Username"
+              id="username"
+              required
+            />
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Password"
+              id="password"
+              required
+            />
+            <button type="button" class="submit-btn" id="login">Log-in</button>
+          </form>
+          <form id="registerForm" class="input-group">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="Username"
+              id="newUsername"
+              required
+            />
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Password"
+              id="newPassword"
+              required
+            />
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Confirm Password"
+              id="confirmPassword"
+              required
+            />
+            <button type="button" class="submit-btn" id="register">
+              Register
+            </button>
+          </form>
+        </div>
+      </section>
+      <section id="Main" class="mainPage none">
+        <div class="form-box2">
+          <div class="imgBox"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

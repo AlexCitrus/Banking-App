@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(./images/background.jfif);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.form-box {
+  width: 380px;
+  height: 600px;
+  position: relative;
+  margin: 6% auto;
+  background: #f7f7f7;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.form-box2 {
+  width: 380px;
+  height: 600px;
+  position: relative;
+  margin: 6% auto;
+  background: #f7f7f7;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.none {
+  display: none;
+}
+
+#logo {
+  width: 200px;
+  height: 50px;
+  position: relative;
+  margin: 6% auto;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  top: 3%;
+  left: 22%;
+  bottom: 20px;
+}
+
+.button-box {
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #62626231;
+  border-radius: 5px;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: linear-gradient(to right, #feca57, #d9518d);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.input-group {
+  top: 250px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+  margin: auto;
+}
+
+.input-field {
+  width: 100%;
+  padding: 20px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: 20px;
+  background: linear-gradient(to right, #feca57, #d9518d);
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+}
+
+#loginForm {
+  left: 50px;
+}
+
+#registerForm {
+  left: 550px;
+}
+
+.imgBox {
+  width: 150px;
+  height: 150px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #62626231;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-image: url(./images/avatar.png);
+  background-size: cover;
+}
