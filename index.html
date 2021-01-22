@@ -5,15 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/dd3d206364.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/main.js" defer></script>
-    <title>Main Application</title>
+    <title>Anytime Money</title>
   </head>
   <body>
     <div class="hero">
+      <div class="selector-menu none">
+        <a href="#" class="nav__link active" onclick="nextPage()"
+          ><i class="fas fa-home"></i
+        ></a>
+        <a href="#" class="nav__link" onclick="depositSection()"
+          ><i class="fas fa-coins"></i
+        ></a>
+        <a href="#" class="nav__link"><i class="fas fa-paper-plane"></i></a>
+        <a href="#" class="nav__link"><i class="fas fa-wallet"></i></a>
+        <a href="#" class="nav__link"><i class="fas fa-cog"></i></a>
+        <a href="#" class="nav__linkk" onclick="logOut()" id="logOutBtn"
+          ><i class="fas fa-sign-out-alt"></i
+        ></a>
+      </div>
       <section id="Forms" class="formsPage">
         <div class="form-box">
           <div class="button-box">
@@ -27,20 +45,21 @@
           </div>
 
           <img id="logo" src="./assets/images/logo.jpg" alt="" />
+          <h1 id="logoText">Anytime Money</h1>
 
           <form id="loginForm" class="input-group">
             <input
               type="text"
               class="input-field"
               placeholder="Username"
-              id="username"
+              id="usernameWeb"
               required
             />
             <input
               type="password"
               class="input-field"
               placeholder="Password"
-              id="password"
+              id="passwordWeb"
               required
             />
             <button type="button" class="submit-btn" id="login">Log-in</button>
@@ -75,7 +94,39 @@
       </section>
       <section id="Main" class="mainPage none">
         <div class="form-box2">
-          <div class="imgBox"></div>
+          <div class="card">
+            <div class="imgBox"></div>
+            <div class="info">
+              <h1 class="userInfo"></h1>
+              <h2 class="accountNumber"></h2>
+              <div class="balance">
+                <h1>Total Balance:</h1>
+                <div>
+                  <!-- <i class="fas fa-money-check-alt"></i> -->
+                  <p id="balanceMoney"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Deposit" class="depositPage none">
+        <div class="form-box3">
+          <div class="card">
+            <div class="imgBox"></div>
+            <div class="info">
+              <h1 class="userInfo"></h1>
+              <h2 class="accountNumber"></h2>
+              <div class="balance">
+                <h1>Deposit</h1>
+                <div>
+                  <!-- <i class="fas fa-money-check-alt"></i> -->
+                  <p id="balanceMoney"></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -14,14 +14,23 @@ function loginSwitch() {
   z.style.left = "0px";
 }
 
+const navLink = document.querySelectorAll(".nav__link");
+
+function linkAction() {
+  navLink.forEach((n) => n.classList.remove("active"));
+  this.classList.add("active");
+}
+
+navLink.forEach((n) => n.addEventListener("click", linkAction));
+
 let objPeople = [{ username: "den", password: "abad" }];
 
-let users = [];
+let users = [{ username: "den", balance: 0 }];
 
 function login() {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-
+  let username = document.getElementById("usernameWeb").value;
+  let password = document.getElementById("passwordWeb").value;
+  //   let navHome = document.querySelector(".home");
   for (i = 0; i < objPeople.length; i++) {
     if (
       username === objPeople[i].username &&
@@ -29,6 +38,13 @@ function login() {
     ) {
       alert(`${username} is logged in!`);
       nextPage();
+      userInfo.innerHTML = `${capitalizeFirstLetter(username)}`;
+      for (let i = 0; i < users.length; i++) {
+        if (username === users[i].username) {
+          balance.innerHTML = `₱${users[i].balance}`;
+          //   navHome.classList.add("active");
+        }
+      }
       return;
     } else if (username === "" && password === "") {
       alert("Fields are blank!");
@@ -39,17 +55,28 @@ function login() {
   alert("Incorrect Username or Password");
 }
 
+function numberWithCommas(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function capitalizeFirstLetter(str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
 function register() {
   let registerUser = document.getElementById("newUsername").value;
   let registerPass = document.getElementById("newPassword").value;
   let confirmPass = document.getElementById("confirmPassword").value;
+  let userBalance = 0;
   let newUser = {
     username: registerUser,
     password: registerPass,
   };
   let createUser = {
     username: registerUser,
-    balance: 0,
+    balance: userBalance,
   };
 
   if (confirmPass !== registerPass) {
@@ -58,7 +85,7 @@ function register() {
   }
 
   for (i = 0; i < objPeople.length; i++) {
-    if (registerUser === objPeople[i].username) {
+    if (registerUser.toLowerCase() === objPeople[i].username.toLowerCase()) {
       alert("that username is taken.");
       return;
     } else if (registerPass.length < 8) {
@@ -71,13 +98,34 @@ function register() {
   users.push(createUser);
   console.log(objPeople);
   console.log(users);
+
   nextPage();
+  userInfo.innerHTML = `${capitalizeFirstLetter(registerUser)}`;
+  //   balance.innerHTML = `₱${users[0].balance}`;
+  for (let i = 0; i < users.length; i++) {
+    if (registerUser === users[i].username) {
+      balance.innerHTML = `₱${numberWithCommas(users[i].balance)}`;
+    }
+  }
+
   //   localStorage.setItem("users", JSON.stringify(users));
   //   console.log(localStorage.getItem("users"));
 }
+// let logOutBtn = document.getElementById("logOutBtn");
 
-inputPass = document.getElementById("password");
+function logOut() {
+  formsPage.classList.remove("none");
+  mainPage.classList.add("none");
+  navBar.classList.add("none");
+  let active = "active";
+  alert("You logged out of your account.");
+  for (let i = 0; i < navLink.length; i++) {
+    navLink[i].classList.remove("active");
+  }
+}
 
+let inputPass = document.getElementById("passwordWeb");
+let inputNewPass = document.getElementById("confirmPassword");
 inputPass.addEventListener("keyup", function (event) {
   // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
@@ -87,14 +135,66 @@ inputPass.addEventListener("keyup", function (event) {
     document.getElementById("login").click();
   }
 });
+
+inputNewPass.addEventListener("keyup", function (event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("register").click();
+  }
+});
 let registerUserBtn = document.getElementById("register");
 registerUserBtn.addEventListener("click", register);
 let contactBtn = document.getElementById("login");
 contactBtn.addEventListener("click", login);
 let formsPage = document.querySelector(".formsPage");
 let mainPage = document.querySelector(".mainPage");
-
+let navBar = document.querySelector(".selector-menu");
+let depositPage = document.querySelector(".depositPage");
 function nextPage() {
   formsPage.classList.add("none");
   mainPage.classList.remove("none");
+  navBar.classList.remove("none");
+  depositPage.classList.add("none");
+  navLink[0].classList.add("active");
+
+  //   userInfo.innerHTML = `${newUser} potek`;
+
+  //   console.log(username);
+}
+
+function depositSection() {
+  depositPage.classList.remove("none");
+  mainPage.classList.add("none");
+}
+
+let userInfo = document.querySelector(".userInfo");
+let balance = document.getElementById("balanceMoney");
+
+function deposit(username, amount) {
+  for (let i = 0; i < users.length; i++) {
+    if (username === users[i].username) {
+      users[i].balance += amount;
+      console.log("test");
+      balance.innerHTML = `₱${numberWithCommas(users[i].balance)}`;
+      return console.log(`${users[i].balance}`);
+    }
+  }
+
+  alert(`User does not exist.`);
+}
+
+function withdraw(username, amount) {
+  for (let i = 0; i < users.length; i++) {
+    if (username === users[i].username) {
+      users[i].balance -= amount;
+      console.log("test");
+      balance.innerHTML = `₱${users[i].balance}`;
+      return console.log(`${users[i].balance}`);
+    }
+  }
+
+  alert(`User does not exist.`);
 }
