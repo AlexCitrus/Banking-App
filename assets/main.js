@@ -117,7 +117,8 @@ function logOut() {
   formsPage.classList.remove("none");
   mainPage.classList.add("none");
   navBar.classList.add("none");
-  let active = "active";
+  depositPage.classList.add("none");
+
   alert("You logged out of your account.");
   for (let i = 0; i < navLink.length; i++) {
     navLink[i].classList.remove("active");
@@ -173,13 +174,22 @@ function depositSection() {
 let userInfo = document.querySelector(".userInfo");
 let balance = document.getElementById("balanceMoney");
 
-function deposit(username, amount) {
-  amount = document.getElementById("depositAmount").value;
-  username = username;
+$("#depositAmount").keypress(function (e) {
+  if (this.value.length == 0 && e.which == 48) {
+    return false;
+  }
+});
+
+function depositFunction() {
+  let amount = document.getElementById("depositAmount").value;
+  //   parseFloat(amount);
+  let username = userInfo.innerHTML.toLowerCase();
+  //   amount.replace(/^0+/, "");
   for (let i = 0; i < users.length; i++) {
     if (username === users[i].username) {
-      users[i].balance += amount;
+      users[i].balance = parseFloat(users[i].balance) + parseFloat(amount);
       console.log("test");
+      console.log(`${users[i].balance}`);
       balance.innerHTML = `₱${numberWithCommas(users[i].balance)}`;
       return console.log(`${users[i].balance}`);
     }
