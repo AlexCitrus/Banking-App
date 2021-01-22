@@ -95,11 +95,17 @@
       <section id="Main" class="mainPage none">
         <div class="form-box2">
           <div class="card">
-            <div class="imgBox"></div>
+            <div class="imgBox">
+              <img class="profile-pic" src="" />
+              <div class="upload-button">
+                <i class="fas fa-arrow-circle-up" aria-hidden="true"></i>
+              </div>
+              <input class="file-upload" type="file" accept="image/*" />
+            </div>
             <div class="info">
               <h1 class="userInfo"></h1>
               <h2 class="accountNumber"></h2>
-              <div class="balance">
+              <div class="mini-form-box">
                 <h1>Total Balance:</h1>
                 <div>
                   <!-- <i class="fas fa-money-check-alt"></i> -->
@@ -114,15 +120,45 @@
       <section id="Deposit" class="depositPage none">
         <div class="form-box3">
           <div class="card">
-            <div class="imgBox"></div>
+            <!-- <div class="imgBox">
+              <img class="profile-pic" src="" />
+              <div class="upload-button">
+                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+              </div>
+              <input class="file-upload" type="file" accept="image/*" />
+            </div> -->
+
             <div class="info">
-              <h1 class="userInfo"></h1>
               <h2 class="accountNumber"></h2>
               <div class="balance">
-                <h1>Deposit</h1>
-                <div>
-                  <!-- <i class="fas fa-money-check-alt"></i> -->
-                  <p id="balanceMoney"></p>
+                <div class="mini-form-box2">
+                  <h1 id="depositText">DEPOSIT</h1>
+                </div>
+                <div class="imgBox2">
+                  <img
+                    id="depositImg"
+                    src="./assets/images/deposit.png"
+                    alt=""
+                  />
+                </div>
+                <div class="mini-form-box-deposit">
+                  <form class="input-group-deposit">
+                    <input
+                      type="number"
+                      class="input-field-deposit"
+                      placeholder="Enter Amount"
+                      id="depositAmount"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="deposit-btn"
+                      id="deposit"
+                      onclick="deposit()"
+                    >
+                      Deposit
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -131,4 +167,8 @@
       </section>
     </div>
   </body>
+  <script
+    type="text/javascript"
+    src="http://code.jquery.com/jquery-1.7.1.min.js"
+  ></script>
 </html>

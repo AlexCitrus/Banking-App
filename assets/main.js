@@ -174,6 +174,8 @@ let userInfo = document.querySelector(".userInfo");
 let balance = document.getElementById("balanceMoney");
 
 function deposit(username, amount) {
+  amount = document.getElementById("depositAmount").value;
+  username = username;
   for (let i = 0; i < users.length; i++) {
     if (username === users[i].username) {
       users[i].balance += amount;
@@ -198,3 +200,28 @@ function withdraw(username, amount) {
 
   alert(`User does not exist.`);
 }
+
+/***AVATAR SCRIPT***/
+
+$(document).ready(function () {
+  var readURL = function (input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $(".profile-pic").attr("src", e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  };
+
+  $(".file-upload").on("change", function () {
+    readURL(this);
+  });
+
+  $(".upload-button").on("click", function () {
+    $(".file-upload").click();
+  });
+});
+/***AVATAR SCRIPT***/
