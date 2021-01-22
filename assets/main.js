@@ -190,7 +190,7 @@ function depositFunction() {
       users[i].balance = parseFloat(users[i].balance) + parseFloat(amount);
       console.log("test");
       console.log(`${users[i].balance}`);
-      balance.innerHTML = `₱${numberWithCommas(users[i].balance)}`;
+      balance.innerHTML = `₱${numberWithCommas(users[i].balance.toString())}`;
       return console.log(`${users[i].balance}`);
     }
   }
