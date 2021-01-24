@@ -29,13 +29,18 @@
         <a href="#" class="nav__link" onclick="depositSection()"
           ><i class="fas fa-coins"></i
         ></a>
-        <a href="#" class="nav__link"><i class="fas fa-paper-plane"></i></a>
-        <a href="#" class="nav__link"><i class="fas fa-wallet"></i></a>
+        <a href="#" class="nav__link" onclick="sendSection()"
+          ><i class="fas fa-paper-plane"></i
+        ></a>
+        <a href="#" class="nav__link" onclick="withdrawSection()"
+          ><i class="fas fa-wallet"></i
+        ></a>
         <a href="#" class="nav__link"><i class="fas fa-cog"></i></a>
         <a href="#" class="nav__linkk" onclick="logOut()" id="logOutBtn"
           ><i class="fas fa-sign-out-alt"></i
         ></a>
       </div>
+
       <section id="Forms" class="formsPage">
         <div class="form-box">
           <div class="button-box">
@@ -124,14 +129,12 @@
       <section id="Deposit" class="depositPage none">
         <div class="form-box3">
           <div class="card">
-            <!-- <div class="imgBox">
-              <img class="profile-pic" src="" />
-              <div class="upload-button">
-                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
-              </div>
-              <input class="file-upload" type="file" accept="image/*" />
-            </div> -->
+            <div id="box3">
+              <i class="fas fa-check-square"></i>
+              <h1 class="popUpBox">Deposit Successful!</h1>
 
+              <a class="close" onclick="pop3()">Close</a>
+            </div>
             <div class="info">
               <h2 class="accountNumber"></h2>
               <div class="balance">
@@ -152,6 +155,7 @@
                       class="input-field-deposit"
                       placeholder="Enter Amount"
                       id="depositAmount"
+                      min="0"
                       required
                     />
                     <button
@@ -161,6 +165,115 @@
                       onclick="depositFunction()"
                     >
                       Deposit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- send money -->
+
+      <section id="Send" class="sendPage none">
+        <div class="form-box3">
+          <div class="card">
+            <!-- <div id="box4">
+              <i class="fas fa-check-square"></i>
+              <h1 class="popUpBox">Deposit Successful!</h1>
+
+              <a class="close" onclick="pop4()">Close</a>
+            </div> -->
+            <div class="info">
+              <h2 class="accountNumber"></h2>
+              <div class="balance">
+                <div class="mini-form-box2">
+                  <h1 id="depositText">SEND MONEY</h1>
+                </div>
+                <div class="imgBox2">
+                  <img id="depositImg" src="./assets/images/send.png" alt="" />
+                </div>
+                <div class="mini-form-box-deposit">
+                  <form class="input-group-deposit2">
+                    <input
+                      type="number"
+                      class="input-field-deposit margin"
+                      placeholder="Enter Account No."
+                      id="sendAcc"
+                      min="0"
+                      required
+                    />
+                    <input
+                      type="number"
+                      class="input-field-deposit"
+                      placeholder="Enter Amount"
+                      id="sendAmount"
+                      min="0"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="send-btn"
+                      id="send"
+                      onclick="sendMoneyFunction()"
+                    >
+                      Deposit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- withdraw -->
+      <section id="Withdraw" class="withdrawPage none">
+        <div class="form-box3">
+          <div class="card">
+            <div id="box">
+              <i class="fas fa-check-square"></i>
+              <h1 class="popUpBox">Withdraw Succesful!</h1>
+
+              <a class="close" onclick="pop()">Close</a>
+            </div>
+            <div id="box2">
+              <i class="fas fa-times"></i>
+              <h1 class="popUpBox">Insufficient Funds!</h1>
+
+              <a class="close" onclick="pop2()">Close</a>
+            </div>
+            <div class="info">
+              <h2 class="accountNumber"></h2>
+              <div class="balance">
+                <div class="mini-form-box2">
+                  <h1 id="depositText">WITHDRAW</h1>
+                </div>
+                <div class="imgBox2">
+                  <img
+                    id="depositImg"
+                    src="./assets/images/withdraw.png"
+                    alt=""
+                  />
+                </div>
+                <div class="mini-form-box-deposit">
+                  <form class="input-group-deposit">
+                    <input
+                      type="number"
+                      class="input-field-deposit"
+                      placeholder="Enter Amount"
+                      id="withdrawAmount"
+                      min="0"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="withdraw-btn"
+                      id="withdraw"
+                      onclick="withdrawFunction()"
+                    >
+                      Withdraw
                     </button>
                   </form>
                 </div>
