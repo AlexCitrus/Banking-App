@@ -24,25 +24,83 @@ function pop() {
     c = 0;
   }
 }
-let k = 0;
+
 function pop2() {
-  if (k === 0) {
+  if (c === 0) {
     document.getElementById("box2").style.display = "block";
-    k = 1;
+    c = 1;
   } else {
     document.getElementById("box2").style.display = "none";
-    k = 0;
+    c = 0;
   }
 }
 
-let l = 0;
 function pop3() {
-  if (l === 0) {
+  if (c === 0) {
     document.getElementById("box3").style.display = "block";
-    l = 1;
+    c = 1;
   } else {
     document.getElementById("box3").style.display = "none";
-    l = 0;
+    c = 0;
+  }
+}
+function pop4() {
+  if (c === 0) {
+    document.getElementById("box4").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box4").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop5() {
+  if (c === 0) {
+    document.getElementById("box5").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box5").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop6() {
+  if (c === 0) {
+    document.getElementById("box6").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box6").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop7() {
+  if (c === 0) {
+    document.getElementById("box7").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box7").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop8() {
+  if (c === 0) {
+    document.getElementById("box8").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box8").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop9() {
+  if (c === 0) {
+    document.getElementById("box9").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box9").style.display = "none";
+    c = 0;
   }
 }
 
@@ -76,7 +134,7 @@ function login() {
       userInfo.innerHTML = `${capitalizeFirstLetter(username)}`;
       for (let k = 0; k < users.length; k++) {
         if (username === users[i].username) {
-          userAccNo.innerHTML = `Acc#${users[i].accNumber}`;
+          userAccNo.innerHTML = `${users[i].accNumber}`;
         }
       }
       // userAccNo.innerHTML = `Acc#${accNo}`;
@@ -144,7 +202,7 @@ function register() {
 
   nextPage();
   userInfo.innerHTML = `${capitalizeFirstLetter(registerUser)}`;
-  userAccNo.innerHTML = `Acc#${accNoUser}`;
+  userAccNo.innerHTML = `${accNoUser}`;
   //   balance.innerHTML = `₱${users[0].balance}`;
   for (let i = 0; i < users.length; i++) {
     if (registerUser === users[i].username) {
@@ -161,8 +219,9 @@ function logOut() {
   formsPage.classList.remove("none");
   mainPage.classList.add("none");
   navBar.classList.add("none");
+  withdrawPage.classList.add("none");
   depositPage.classList.add("none");
-
+  sendMoneyPage.classList.add("none");
   alert("You logged out of your account.");
   for (let i = 0; i < navLink.length; i++) {
     navLink[i].classList.remove("active");
@@ -271,7 +330,7 @@ function depositFunction() {
   let amount = document.getElementById("depositAmount").value;
 
   if (parseFloat(amount) < 0) {
-    alert("Number cannot be negative.");
+    pop6();
     return;
   }
   //   parseFloat(amount);
@@ -288,14 +347,14 @@ function depositFunction() {
     }
   }
 
-  alert(`User does not exist.`);
+  pop7();
 }
 
 function withdrawFunction() {
   let amount = document.getElementById("withdrawAmount").value;
 
   if (parseFloat(amount) < 0) {
-    alert("Number cannot be negative.");
+    pop9();
     return;
   }
   //   parseFloat(amount);
@@ -304,7 +363,9 @@ function withdrawFunction() {
   for (let i = 0; i < users.length; i++) {
     if (username === users[i].username) {
       if (parseFloat(users[i].balance) < parseFloat(amount)) {
-        return pop2();
+        console.log(`langya`);
+        pop8();
+        return;
       }
 
       users[i].balance = parseFloat(users[i].balance) - parseFloat(amount);
@@ -316,15 +377,20 @@ function withdrawFunction() {
     }
   }
 
-  alert(`User does not exist.`);
+  pop7();
 }
 
 function sendMoneyFunction() {
   let amount = document.getElementById("sendAmount").value;
   let accNumberHTML = document.getElementById("sendAcc").value;
+  let currentAccNo = document.querySelector(".accountNumber").innerHTML;
+
+  if (accNumberHTML === currentAccNo) {
+    return pop5();
+  }
 
   if (parseFloat(amount) < 0) {
-    alert("Number cannot be negative.");
+    pop6();
     return;
   }
   //   parseFloat(amount);
@@ -338,19 +404,20 @@ function sendMoneyFunction() {
       for (let k = 0; k < objPeople.length; k++) {
         if (accNumberHTML === users[k].accNumber) {
           users[k].balance = parseFloat(users[k].balance) + parseFloat(amount);
-          alert(`sent succesfully`);
+          users[i].balance = parseFloat(users[i].balance) - parseFloat(amount);
+          console.log("test");
+          console.log(`${users[i].balance}`);
+          balance.innerHTML = `₱${numberWithCommas(
+            users[i].balance.toString()
+          )}`;
+          return pop4();
+          // return alert(`sent succesfully`);
         }
       }
-      users[i].balance = parseFloat(users[i].balance) - parseFloat(amount);
-      console.log("test");
       console.log(`${users[i].balance}`);
-      balance.innerHTML = `₱${numberWithCommas(users[i].balance.toString())}`;
-      pop();
-      return console.log(`${users[i].balance}`);
     }
   }
-
-  alert(`User does not exist.`);
+  pop7();
 }
 
 /***AVATAR SCRIPT***/
