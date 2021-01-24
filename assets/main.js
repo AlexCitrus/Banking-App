@@ -104,6 +104,46 @@ function pop9() {
   }
 }
 
+function pop10() {
+  if (c === 0) {
+    document.getElementById("box10").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box10").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop11() {
+  if (c === 0) {
+    document.getElementById("box11").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box11").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop12() {
+  if (c === 0) {
+    document.getElementById("box12").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box12").style.display = "none";
+    c = 0;
+  }
+}
+
+function pop13() {
+  if (c === 0) {
+    document.getElementById("box13").style.display = "block";
+    c = 1;
+  } else {
+    document.getElementById("box13").style.display = "none";
+    c = 0;
+  }
+}
+
 const navLink = document.querySelectorAll(".nav__link");
 
 function linkAction() {
@@ -222,6 +262,7 @@ function logOut() {
   withdrawPage.classList.add("none");
   depositPage.classList.add("none");
   sendMoneyPage.classList.add("none");
+  settingsPage.classList.add("none");
   alert("You logged out of your account.");
   for (let i = 0; i < navLink.length; i++) {
     navLink[i].classList.remove("active");
@@ -282,12 +323,14 @@ let navBar = document.querySelector(".selector-menu");
 let depositPage = document.querySelector(".depositPage");
 let withdrawPage = document.querySelector(".withdrawPage");
 let sendMoneyPage = document.querySelector(".sendPage");
+let settingsPage = document.querySelector(".settingsPage");
 function nextPage() {
   formsPage.classList.add("none");
   mainPage.classList.remove("none");
   navBar.classList.remove("none");
   depositPage.classList.add("none");
   withdrawPage.classList.add("none");
+  settingsPage.classList.add("none");
   navLink[0].classList.add("active");
 
   //   userInfo.innerHTML = `${newUser} potek`;
@@ -300,6 +343,7 @@ function depositSection() {
   mainPage.classList.add("none");
   withdrawPage.classList.add("none");
   sendMoneyPage.classList.add("none");
+  settingsPage.classList.add("none");
 }
 
 function withdrawSection() {
@@ -307,6 +351,7 @@ function withdrawSection() {
   mainPage.classList.add("none");
   withdrawPage.classList.remove("none");
   sendMoneyPage.classList.add("none");
+  settingsPage.classList.add("none");
 }
 
 function sendSection() {
@@ -314,6 +359,15 @@ function sendSection() {
   mainPage.classList.add("none");
   withdrawPage.classList.add("none");
   sendMoneyPage.classList.remove("none");
+  settingsPage.classList.add("none");
+}
+
+function settingsSection() {
+  depositPage.classList.add("none");
+  mainPage.classList.add("none");
+  withdrawPage.classList.add("none");
+  sendMoneyPage.classList.add("none");
+  settingsPage.classList.remove("none");
 }
 
 let userInfo = document.querySelector(".userInfo");
@@ -418,6 +472,31 @@ function sendMoneyFunction() {
     }
   }
   pop7();
+}
+
+function changePasswordUser() {
+  let currentPassword = document.getElementById("oldPass").value;
+  let newPassword = document.getElementById("newPass").value;
+  let currentUser = document.querySelector(".userInfo").innerHTML;
+
+  if (newPassword.length < 8) {
+    console.log(`test`);
+    return pop12();
+  }
+
+  for (let j = 0; j < objPeople.length; j++) {
+    if (currentUser.toLowerCase() === objPeople[i].username) {
+      if (newPassword.length >= 8) {
+        if (currentPassword === objPeople[i].password) {
+          objPeople[i].password = newPassword;
+          return pop10();
+        }
+        return pop11();
+      }
+    }
+  }
+
+  // return pop12();
 }
 
 /***AVATAR SCRIPT***/

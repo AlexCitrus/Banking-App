@@ -327,6 +327,31 @@ h2 {
   background: #1da88a;
 }
 
+.change-btn {
+  margin-top: 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  background: #24cfaa;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+
+.change-btn:hover {
+  background: #2fdbb6;
+}
+
+.change-btn:active {
+  background: #1da88a;
+}
+
 .submit-btn {
   width: 85%;
   padding: 10px 30px;
@@ -703,6 +728,122 @@ h2 {
 }
 
 #box9 h1 {
+  color: #333;
+  font-size: 40px;
+}
+
+#box10 {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background: #f1f1f1;
+  box-shadow: 0 0 20px black;
+  border-radius: 8px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+#box10 i {
+  color: #2ecc71;
+  font-size: 70px;
+  display: block;
+  margin: 20px 0;
+}
+
+#box10 h1 {
+  color: #333;
+  font-size: 40px;
+}
+
+#box11 {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background: #f1f1f1;
+  box-shadow: 0 0 20px black;
+  border-radius: 8px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+#box11 i {
+  color: #cc2e2e;
+  font-size: 70px;
+  display: block;
+  margin: 20px 0;
+}
+
+#box11 h1 {
+  color: #333;
+  font-size: 40px;
+}
+
+#box12 {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background: #f1f1f1;
+  box-shadow: 0 0 20px black;
+  border-radius: 8px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+#box12 i {
+  color: #cc2e2e;
+  font-size: 70px;
+  display: block;
+  margin: 20px 0;
+}
+
+#box12 h1 {
+  color: #333;
+  font-size: 40px;
+}
+
+#box13 {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background: #f1f1f1;
+  box-shadow: 0 0 20px black;
+  border-radius: 8px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+#box13 i {
+  color: #cc2e2e;
+  font-size: 70px;
+  display: block;
+  margin: 20px 0;
+}
+
+#box13 h1 {
   color: #333;
   font-size: 40px;
 }

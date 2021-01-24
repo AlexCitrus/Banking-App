@@ -35,7 +35,9 @@
         <a href="#" class="nav__link" onclick="withdrawSection()"
           ><i class="fas fa-wallet"></i
         ></a>
-        <a href="#" class="nav__link"><i class="fas fa-cog"></i></a>
+        <a href="#" class="nav__link" onclick="settingsSection()"
+          ><i class="fas fa-cog"></i
+        ></a>
         <a href="#" class="nav__linkk" onclick="logOut()" id="logOutBtn"
           ><i class="fas fa-sign-out-alt"></i
         ></a>
@@ -247,7 +249,7 @@
                       id="send"
                       onclick="sendMoneyFunction()"
                     >
-                      Deposit
+                      Send Money
                     </button>
                   </form>
                 </div>
@@ -309,6 +311,84 @@
                       onclick="withdrawFunction()"
                     >
                       Withdraw
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- change password -->
+
+      <section id="Settings" class="settingsPage none">
+        <div class="form-box3">
+          <div class="card">
+            <div id="box10">
+              <i class="fas fa-check-square"></i>
+              <h1 class="popUpBox">Password Changed Successfully!</h1>
+              <a class="close" onclick="pop10()">Close</a>
+            </div>
+            <div class="info">
+              <h2 class="accountNumber"></h2>
+              <div class="balance">
+                <div class="mini-form-box2">
+                  <h1 id="depositText">CHANGE PASSWORD</h1>
+                </div>
+                <div id="box11">
+                  <i class="fas fa-times"></i>
+                  <h1 class="popUpBox">Current Password is Wrong!</h1>
+
+                  <a class="close" onclick="pop11()">Close</a>
+                </div>
+                <div id="box12">
+                  <i class="fas fa-times"></i>
+                  <h1 class="popUpBox">
+                    Password should be a minimum of 8 characters!
+                  </h1>
+
+                  <a class="close" onclick="pop12()">Close</a>
+                </div>
+
+                <div id="box13">
+                  <i class="fas fa-times"></i>
+                  <h1 class="popUpBox">Passwords don't match!</h1>
+
+                  <a class="close" onclick="pop13()">Close</a>
+                </div>
+                <div class="imgBox2">
+                  <img
+                    id="depositImg"
+                    src="./assets/images/settings.png"
+                    alt=""
+                  />
+                </div>
+                <div class="mini-form-box-deposit">
+                  <form class="input-group-deposit2">
+                    <input
+                      type="password"
+                      class="input-field-deposit margin"
+                      placeholder="Enter Old Password."
+                      id="oldPass"
+                      min="0"
+                      required
+                    />
+                    <input
+                      type="password"
+                      class="input-field-deposit"
+                      placeholder="Enter New Password"
+                      id="newPass"
+                      min="0"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="change-btn"
+                      id="change"
+                      onclick="changePasswordUser()"
+                    >
+                      Confirm
                     </button>
                   </form>
                 </div>
