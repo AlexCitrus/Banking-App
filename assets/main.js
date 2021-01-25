@@ -155,9 +155,9 @@ navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 let randomDigits = Math.floor(Math.random() * 9000000000) + 1000000000;
 
-let objPeople = [{ username: "den", password: "abad" }];
+let objPeople = [{ username: "Admin", password: "00000000" }];
 
-let users = [{ username: "den", balance: 0, accNumber: "3116340983" }];
+let users = [{ username: "Admin", balance: 1000, accNumber: "3116340983" }];
 
 function login() {
   let username = document.getElementById("usernameWeb").value;
@@ -324,6 +324,7 @@ let depositPage = document.querySelector(".depositPage");
 let withdrawPage = document.querySelector(".withdrawPage");
 let sendMoneyPage = document.querySelector(".sendPage");
 let settingsPage = document.querySelector(".settingsPage");
+let showUsersPage = document.querySelector(".usersPage");
 function nextPage() {
   formsPage.classList.add("none");
   mainPage.classList.remove("none");
@@ -370,6 +371,26 @@ function settingsSection() {
   settingsPage.classList.remove("none");
 }
 
+function showUsers() {
+  let list = document.getElementById("nameUser");
+
+  users.forEach(
+    (user) =>
+      (list.innerHTML +=
+        "<br><br>" +
+        Object.values(user.username).join("") +
+        "    #" +
+        Object.values(user.accNumber).join(""))
+  );
+
+  formsPage.classList.add("none");
+  showUsersPage.classList.remove("none");
+}
+
+function returntoMain() {
+  formsPage.classList.remove("none");
+  showUsersPage.classList.add("none");
+}
 let userInfo = document.querySelector(".userInfo");
 let userAccNo = document.querySelector(".accountNumber");
 let balance = document.getElementById("balanceMoney");

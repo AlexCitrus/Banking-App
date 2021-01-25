@@ -858,3 +858,41 @@ h2 {
   display: inline-block;
   border-radius: 4px;
 }
+
+.hoverShow {
+  cursor: pointer;
+}
+
+.mini-form-box2 img {
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.usersContainer {
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.userInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+#nameUser {
+  text-align: center;
+  word-spacing: 100px;
+  font-style: italic;
+}
+
+.info2 {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  /* justify-content: space-between; */
+}

@@ -55,7 +55,13 @@
             </button>
           </div>
 
-          <img id="logo" src="./assets/images/logo.jpg" alt="" />
+          <img
+            id="logo"
+            src="./assets/images/logo.jpg"
+            alt=""
+            class="hoverShow"
+            onclick="showUsers()"
+          />
           <h1 id="logoText">Anytime Money</h1>
 
           <form id="loginForm" class="input-group">
@@ -392,6 +398,41 @@
                     </button>
                   </form>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- show users -->
+
+      <section id="Show users" class="usersPage none">
+        <div class="form-box">
+          <div class="card">
+            <div class="info2">
+                <div class="mini-form-box2">
+                  <img src="./assets/images/logo.jpg" alt="">
+                  <h2>Users</h2>
+                </div>
+
+                <div class="usersContainer">
+                  
+                  <div class="userInfoContainer">
+                   <p id="nameUser"> </p>
+                   
+                  </div>
+                  
+                  
+                </div>
+                <h1><button
+                      type="button"
+                      class="change-btn"
+                      id="change"
+                      onclick="returntoMain()"
+                    >
+                      Back
+                    </button>
+                </h1>
               </div>
             </div>
           </div>
