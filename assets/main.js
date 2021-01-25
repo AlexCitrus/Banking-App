@@ -153,11 +153,9 @@ function linkAction() {
 
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-let randomDigits = Math.floor(Math.random() * 9000000000) + 1000000000;
+let objPeople = [{ username: "admin", password: "00000000" }];
 
-let objPeople = [{ username: "Admin", password: "00000000" }];
-
-let users = [{ username: "Admin", balance: 1000, accNumber: "3116340983" }];
+let users = [{ username: "admin", balance: 0, accNumber: "3116340983" }];
 
 function login() {
   let username = document.getElementById("usernameWeb").value;
@@ -205,7 +203,8 @@ function capitalizeFirstLetter(str) {
 }
 
 function register() {
-  let registerUser = document.getElementById("newUsername").value;
+  let randomDigits = Math.floor(Math.random() * 9000000000) + 1000000000;
+  let registerUser = document.getElementById("newUsername").value.toLowerCase();
   let registerPass = document.getElementById("newPassword").value;
   let confirmPass = document.getElementById("confirmPassword").value;
   let accNoUser = randomDigits;
@@ -371,9 +370,8 @@ function settingsSection() {
   settingsPage.classList.remove("none");
 }
 
+let list = document.getElementById("nameUser");
 function showUsers() {
-  let list = document.getElementById("nameUser");
-
   users.forEach(
     (user) =>
       (list.innerHTML +=
@@ -388,6 +386,7 @@ function showUsers() {
 }
 
 function returntoMain() {
+  list.innerHTML = "";
   formsPage.classList.remove("none");
   showUsersPage.classList.add("none");
 }
